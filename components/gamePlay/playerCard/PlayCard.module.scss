@@ -1,0 +1,123 @@
+@import "@/styles/imports";
+
+.card {
+	background-color: $col-primary;
+	width: 100%;
+	padding: 2.4rem;
+	border-radius: 1.6rem;
+	@extend %center;
+	min-height: 20rem;
+	.text {
+		text-align: center;
+		h3 {
+			@extend %title-30;
+			font-family: $font-700;
+		}
+		h6 {
+			@extend %text-18;
+		}
+		p {
+			color: $col-text-secondary;
+		}
+	}
+	.countDown {
+		margin-top: 2rem;
+		background-color: #20232d;
+		padding: 0.2rem 0.8rem;
+		border-radius: 10rem;
+	}
+	.hand_container {
+		@include grid(repeat(5, 1fr), 1.6rem);
+		margin-top: 5rem;
+		.hand {
+			width: 100%;
+			background-color: $col-secondary;
+			padding: 1.6rem;
+			border-radius: 0.8rem;
+			cursor: pointer;
+			@extend %center;
+			position: relative;
+			&[data-active="true"] {
+				background-color: $col-white;
+			}
+			&[data-disabled="true"] {
+				cursor: not-allowed;
+			}
+		}
+	}
+	.icon {
+		position: relative;
+		width: 4rem;
+		height: 4rem;
+	}
+	.result_block {
+		@include flex(flex-start, center);
+		gap: 0.8rem;
+		margin-block: 4rem;
+	}
+	.button {
+		width: 100%;
+		background-color: $col-white;
+		margin-top: 3rem;
+		border-radius: 0.8rem;
+	}
+	&[data-result="win"] {
+		background-color: #008f0e;
+		.text {
+			p {
+				color: $col-white;
+			}
+		}
+		.hand_container {
+			.hand {
+				background-color: #01820d;
+				&[data-active="true"] {
+					background-color: $col-white;
+				}
+			}
+		}
+	}
+	&[data-result="loss"] {
+		background-color: #ea1e63;
+		.text {
+			p {
+				color: $col-white;
+			}
+		}
+		.hand_container {
+			.hand {
+				background-color: #cf0b4e;
+				&[data-active="true"] {
+					background-color: $col-white;
+				}
+			}
+		}
+	}
+	&[data-result="tie"] {
+		background-color: #b99d00;
+		.text {
+			p {
+				color: $col-white;
+			}
+		}
+		.hand_container {
+			.hand {
+				background-color: #816e00;
+				&[data-active="true"] {
+					background-color: $col-white;
+				}
+			}
+		}
+	}
+	@include screenMax("mobile") {
+		.hand_container {
+			.hand {
+				padding: 1rem;
+			}
+		}
+		.icon {
+			width: 3rem;
+			height: 3rem;
+		}
+	}
+}

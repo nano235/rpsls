@@ -1,0 +1,69 @@
+@import "@/styles/imports";
+
+.modal {
+	width: 48rem;
+	.title {
+		text-align: center;
+	}
+	.text {
+		color: $col-text-secondary;
+		h3 {
+			color: $col-white;
+			@extend %title-18;
+			font-family: $font-500;
+		}
+		h4 {
+			color: $col-white;
+			@extend %text-14;
+			font-family: $font-700;
+		}
+		span {
+			background-color: #20232d;
+			padding: 0.2rem 0.8rem;
+			border-radius: 10rem;
+		}
+		&[data-active="true"] {
+			background-color: $col-secondary;
+			padding: 0.8rem 1.6rem;
+			border-radius: 1.6rem;
+		}
+	}
+	.stake_container {
+		@extend %center;
+		width: 100%;
+		.stake_amount {
+			all: unset;
+			flex-grow: 1;
+			width: 100%;
+			max-width: 100%;
+			margin-block: 1.6rem;
+			line-height: 6.4rem;
+			font-size: 5.6rem;
+			font-family: $font-600;
+			text-align: center;
+		}
+	}
+	.add_player {
+		margin-top: 2rem;
+
+		.input {
+			all: unset;
+			width: 100%;
+			max-width: 100%;
+			margin-block: 1.6rem;
+			padding-block: 1.6rem;
+			line-height: 1rem;
+			font-size: 1.6rem;
+			font-family: $font-600;
+			border-bottom: 0.1rem solid #21232D;
+			text-align: center;
+			&::placeholder {
+				color: $col-text-secondary;
+			}
+		}
+	}
+	.button {
+		margin-top: 5rem;
+		width: 100%;
+	}
+}

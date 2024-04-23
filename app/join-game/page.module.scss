@@ -1,0 +1,26 @@
+@import "@/styles/imports";
+
+.section {
+	width: 100%;
+	.container {
+		@extend %center;
+	}
+	.title {
+		margin-bottom: 5rem;
+		h3 {
+			@extend %title-24;
+			text-align: center;
+		}
+		p {
+			text-align: center;
+			color: $col-text-secondary;
+		}
+	}
+	.button {
+		background-color: #20232d;
+		padding: 0.2rem 0.8rem;
+		border-radius: 10rem;
+		color: $col-white;
+		margin-bottom: 1rem;
+	}
+}

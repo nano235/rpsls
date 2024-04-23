@@ -1,0 +1,17 @@
+@import "@/styles/imports";
+
+.header {
+	@include flex(space-between, center, nowrap);
+	padding: 1.2rem 8rem;
+	padding-top: 2.4rem;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	background-color: $col-secondary;
+	transition: $all-transition;
+	border-bottom: 0.1rem solid #2c2e33;
+	z-index: 3;
+	@include screenMax("mobile") {
+		padding: 1.6rem;
+	}
+}
